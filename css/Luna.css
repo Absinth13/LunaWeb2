@@ -1,0 +1,414 @@
+:root {
+--textArticle:'Poppins', helvetica, sans-serif;
+--textTitle:hsl(234, 20%, 30%);
+--textColorArticle:hsl(234, 20%, 30%);
+--ankerDeko:hsl(151, 43%, 47%);
+--highlightText:hsl(13, 46%, 39%);
+--sizeFontText:clamp(2rem, 0.46 + 5.44vw 4rem);
+--backgroundC:hsl(40, 35%, 93%);    
+}
+
+
+body {
+    background-color: hsl(40, 35%, 93%);
+    font-family: 'Poppins', helvetica, sans-serif;
+    color: var(--textColorArticle);
+    
+}
+
+.titulo  {font-size: xxx-large;
+color:var(--textTitle);
+text-align: center;}
+
+.mainHeader{
+    text-align: justify;
+}
+
+ul {
+    list-style: none;
+    background-color:hsla(37, 80%, 75%, 0.354);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.flex {
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap:15px;
+    
+}
+
+.mainHeader li:hover {
+    display: block;
+}
+
+.flex li {
+    position:relative;
+}
+
+.flex a {
+    color: hsl(151, 27%, 28%);
+    text-decoration:none;
+    
+}
+
+.flex a:hover, .flex a:focus {
+    color: hsl(13, 68%, 63%);
+    text-decoration:underline;
+}
+
+.row {
+    margin-top:50px;
+    display:flex;
+    flex-wrap:wrap;
+    padding:0 4px;
+}
+
+.column {
+   
+    flex:100%;
+    max-width: 100%;
+    padding: 0, 4px;
+}
+
+.column img {
+    width:100%;
+    vertical-align: middle;
+    margin-top: 2px;
+}
+
+
+/* -------about me------*/
+div .line {
+    display:flex;
+    width:100vw;
+    height: 10px;
+    align-self: center;
+    margin-top: 50px;
+    background-color:var(--ankerDeko);
+    animation-name:lauf;
+    animation-duration:10s;
+    animation-iteration-count:infinite;
+    animation-fill-mode:forwards;
+}
+
+    @keyframes lauf {
+        0% { background-color:rgb(242, 204, 143); transform: translateY(0);}
+        25% { background-color:rgb(129, 178, 154); transform: translateY(0);}
+        40% { background-color: rgb(61, 64, 91); transform: translateY(0);}
+        50% { background-color: rgb(224, 122, 95); transform: translateY(0);}
+        100% { background-color: rgb(230, 184, 33); transform: translateY(0);}
+    
+    }
+    
+
+
+
+.aboutme {
+    margin-left: 40px;
+    margin-right: 40px;
+
+    
+}
+h1 {
+    font-size: xxx-large;
+    color:var(--textTitle);
+    text-align: center;
+}
+
+h2 {
+    font-size: xx-large;
+}
+h3 {
+    font-size: x-large;
+}
+
+
+.inst {
+    text-decoration: none;
+    color:var(--ankerDeko);
+}
+
+.brown {
+    color:var(--highlightText);
+    font-size:1.1rem;
+    font-weight:900;
+}
+
+p {
+    font-size: clamp(2rem, 0.46 + 5.44vw 4rem);
+}
+
+/*--------------------work--------------*/
+.imMovement {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:var(--backgroundC);
+    border:30px var(--backgroundC);
+}
+
+.movement img {
+    margin-top: 40px;
+    border-radius:5px;
+    width:700px;
+    height:700px;
+    object-fit:cover;
+    object-position:center;
+    transition: all 5.3s;
+
+}
+
+.movement img:hover {
+    object-position: 100%;
+}
+
+/*-----section 2------*/
+
+.secondText {
+
+    margin-left: 40px;
+    margin-right: 40px;
+    margin-top: 80px;
+    text-align:justify;
+
+}
+
+/*--------------slide gallery------------*/
+.container {
+    
+    width: 750px;
+    height: auto;
+     margin:50px auto 0;
+    overflow: hidden;
+    margin-left: 30%;
+    
+
+}
+.container ul {
+    display: flex;
+    padding:0;
+    width: 400%;
+    
+    animation: slide 16s infinite alternate ease-in-out;
+}
+
+.container li {
+    list-style: none;
+    width: 100%;
+
+}
+
+.container img {
+    width: 100%;
+}
+
+@keyframes slide {
+    0% {margin-left: 0%;}
+    20% {margin-left: 0%;}
+    25% {margin-left: -100%;}
+    45% {margin-left: -100%;}
+    50% {margin-left: -200%;}
+    70% {margin-left: -200%;}
+    75% {margin-left: -300%;}
+    95% {margin-left: -300%;}
+}
+
+.foot a {
+    text-align: center;
+    color: var(--ankerDeko);
+    text-decoration: none;
+    
+}
+
+/*---------------breakpoints-------*/
+
+@media(min-width:600px){
+    .flex {
+        flex-direction:row;
+        
+    }
+     .flex li {
+        flex:1;
+
+     }
+
+     .mainNav {
+        display: block;
+     }
+
+     .row {
+        border:5px;
+
+     }
+  
+     ul {
+        justify-content: center;
+     }
+     
+     .textOne {
+        text-align:justify;
+     }
+   
+     .imMovement {                  /*----transition-----*/
+        display: flex;
+        flex:1;
+        justify-content: center;
+        align-items: center;
+        background-color:var(--backgroundC);
+        border:30px, var(--backgroundC);
+    }
+    
+    .movement img {
+        margin-top: 40px;
+        width:600px;
+        height:600px;
+    
+ 
+    }
+
+    .container {
+
+
+        width:550px;
+        margin-left:100px;
+
+    
+    }
+ 
+
+    
+
+}
+
+  
+
+@media(min-width:375px) {
+    .column {
+        
+        flex:50%;
+        max-width: 50%;
+        
+     }
+
+     ul {
+        justify-content: center;
+     }
+
+     .aboutme {
+        text-align:center;
+        justify-items:center ;
+     }
+     .textOne {
+        text-align:justify;
+     }
+   
+    .imMovement {
+        display: flex;
+        flex:1;
+        justify-content: center;
+        align-items: center;
+        background-color:var(--backgroundC);
+        border:30px, var(--backgroundC);
+    }
+    .movement img {
+        margin-top: 40px;
+        width:300px;
+        height:300px;
+
+    }
+
+    .container {
+        
+        width:300px;
+        margin-left: 35px;
+        
+    }
+ 
+
+}
+
+@media(min-width:800px) {
+
+    .column {
+        
+        flex:25%;
+        max-width: 25%;
+    }
+
+   
+    .aboutme {
+        text-align:justify;
+     }
+
+     .imMovement {
+        display: flex;
+        flex:1;
+        justify-content: center;
+        align-items: center;
+        background-color:var(--backgroundC);
+        border:30px, var(--backgroundC);
+    }
+    .movement img {
+        margin-top: 40px;
+        width:600px;
+        height:600px;
+
+    }
+    .container {
+        width:600px;
+        height: auto;
+         margin:50px auto 0;
+        overflow: hidden;
+        margin-left:80px;
+    
+    }
+   
+       
+    
+
+
+    }
+
+
+@media(min-width:1180px) {
+    .column {
+        
+        flex:25%;
+        max-width: 25%;
+    }
+
+  
+   
+     .imMovement {
+        display: flex;
+        flex:1;
+        justify-content: center;
+        align-items: center;
+        background-color:var(--backgroundC);
+        border:30px, var(--backgroundC);
+    }
+
+    .movement img {
+        margin-top: 40px;
+        width:800px;
+        height:800px;
+
+    }
+
+    .container {
+        width: 750px;
+        height: auto;
+         margin:50px auto 0;
+        overflow: hidden;
+        margin-left:50%;
+    
+    }
+   
+       
+    
+    
+
+}
