@@ -15,26 +15,51 @@ body {
     color: var(--textColorArticle);
     
 }
+.line {
+    display:flex;
+    width:100vw;
+    height: 10px;
+    align-self: center;
+    margin-top: 50px;
+    background-color:var(--ankerDeko);
+    animation-name:lauf;
+    animation-duration:10s;
+    animation-iteration-count:infinite;
+    animation-fill-mode:forwards;
+}
+
+    @keyframes lauf {
+        0% { background-color:rgb(242, 204, 143); transform: translateY(0);}
+        25% { background-color:rgb(129, 178, 154); transform: translateY(0);}
+        40% { background-color: rgb(61, 64, 91); transform: translateY(0);}
+        50% { background-color: rgb(224, 122, 95); transform: translateY(0);}
+        100% { background-color: rgb(230, 184, 33); transform: translateY(0);}
+    
+    }
 
 .titulo  {font-size: xxx-large;
 color:var(--textTitle);
 text-align: center;}
 
+
+
 .mainHeader{
-    text-align: justify;
+  
+   align-items: center;
 }
 
 ul {
     list-style: none;
-    background-color:hsla(37, 80%, 75%, 0.354);
-    border-radius: 5px;
+  /*background-color:hsla(37, 80%, 75%, 0.354);
+    border-radius: 5px;*/
     text-align: center;
 }
 
-.flex {
+.menu {
     display:flex;
     flex-wrap: wrap;
-    flex-direction: column;
+    flex-direction:row;
+    justify-content: center;
     gap:15px;
     
 }
@@ -43,17 +68,13 @@ ul {
     display: block;
 }
 
-.flex li {
-    position:relative;
-}
-
-.flex a {
+.menu a {
     color: hsl(151, 27%, 28%);
     text-decoration:none;
     
 }
 
-.flex a:hover, .flex a:focus {
+.menu a:hover, .menu a:focus {
     color: hsl(13, 68%, 63%);
     text-decoration:underline;
 }
@@ -80,29 +101,6 @@ ul {
 
 
 /* -------about me------*/
-div .line {
-    display:flex;
-    width:100vw;
-    height: 10px;
-    align-self: center;
-    margin-top: 50px;
-    background-color:var(--ankerDeko);
-    animation-name:lauf;
-    animation-duration:10s;
-    animation-iteration-count:infinite;
-    animation-fill-mode:forwards;
-}
-
-    @keyframes lauf {
-        0% { background-color:rgb(242, 204, 143); transform: translateY(0);}
-        25% { background-color:rgb(129, 178, 154); transform: translateY(0);}
-        40% { background-color: rgb(61, 64, 91); transform: translateY(0);}
-        50% { background-color: rgb(224, 122, 95); transform: translateY(0);}
-        100% { background-color: rgb(230, 184, 33); transform: translateY(0);}
-    
-    }
-    
-
 
 
 .aboutme {
@@ -125,10 +123,12 @@ h3 {
 }
 
 
-.inst {
+.insta a{
     text-decoration: none;
     color:var(--ankerDeko);
 }
+
+
 
 .brown {
     color:var(--highlightText);
@@ -177,7 +177,7 @@ p {
 }
 
 /*--------------slide gallery------------*/
-.container {
+.containerSlide {
     
     width: 750px;
     height: auto;
@@ -187,7 +187,7 @@ p {
     
 
 }
-.container ul {
+.containerSlide ul {
     display: flex;
     padding:0;
     width: 400%;
@@ -195,14 +195,32 @@ p {
     animation: slide 16s infinite alternate ease-in-out;
 }
 
-.container li {
+.containerSlide li {
     list-style: none;
     width: 100%;
 
 }
 
-.container img {
+.containerSlide img {
     width: 100%;
+}
+
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* centra horizontal */
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+}
+
+.insta-link {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* centra icono + texto */
+    gap: 10px;
+    text-decoration: none;
+    color: var(--ankerDeko);
 }
 
 @keyframes slide {
@@ -216,35 +234,35 @@ p {
     95% {margin-left: -300%;}
 }
 
-.foot a {
-    text-align: center;
+.foot  a  {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+    font-size:1rem;
     color: var(--ankerDeko);
     text-decoration: none;
+    margin-top: 1rem;
     
 }
+/*-------------------------breakpoints---------------------*/
 
-/*---------------breakpoints-------*/
-
-@media(min-width:600px){
-    .flex {
-        flex-direction:row;
+@media(min-width:320px){
+    .menu {
+        display: flex;
+        flex-direction:column;
+        justify-content: center;
         
     }
-     .flex li {
-        flex:1;
-
-     }
-
-     .mainNav {
-        display: block;
-     }
-
-     .row {
+  
+    .row {
         border:5px;
 
      }
   
      ul {
+        list-style: none;
+        display:flex;
         justify-content: center;
      }
      
@@ -263,13 +281,13 @@ p {
     
     .movement img {
         margin-top: 40px;
-        width:600px;
-        height:600px;
+        width:60%;
+        height:60%;
     
  
     }
 
-    .container {
+    .containerSlide {
 
 
         width:550px;
@@ -277,25 +295,50 @@ p {
 
     
     }
- 
-
-    
-
+    .insta-icon svg {
+        width: 70px;
+        height: 70px;
+    }
 }
+    .containerContact {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+    }
 
-  
+    .containerContact img {
+        width: 90%;
+        height: auto;
+    }
 
-@media(min-width:375px) {
+
+
+  @media(min-width:375px) {
     .column {
         
         flex:50%;
         max-width: 50%;
-        
-     }
+        }
 
-     ul {
-        justify-content: center;
-     }
+    ul.menu {
+ 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+    }
+
+    ul.menu li {
+        flex: unset;
+        width: auto;
+        text-align: center;
+    }
+}
+    .line {
+        width: 90%;
+        margin: 20px auto 0;
+    }
 
      .aboutme {
         text-align:center;
@@ -320,17 +363,23 @@ p {
 
     }
 
-    .container {
+    .containerSlide {
         
         width:300px;
         margin-left: 35px;
         
     }
+   
  
 
-}
-
-@media(min-width:800px) {
+@media(min-width:680px) {
+    .menu  {
+        display: flex;
+        flex-direction:column;
+        justify-content:center;
+        padding:0 50px;
+        
+    }
 
     .column {
         
@@ -357,23 +406,60 @@ p {
         height:600px;
 
     }
-    .container {
+    .containerSlide {
         width:600px;
         height: auto;
-         margin:50px auto 0;
+        margin:50px auto 0;
         overflow: hidden;
-        margin-left:80px;
+      
     
     }
+    .containerSlide img{
+       width: 100%;
+       justify-content: center;
+    
+    }
+
+    .containerContact {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+    }
+
+    .containerContact img {
+        width: 70%;
+        height: auto;
+    }
+}
+
    
+ 
+ 
+   @media(min-width:1180px) {
+       .mainHeader {
+        display: flex;
+        align-items: center;
+        justify-content:center;
        
-    
-
-
     }
 
+    ul.menu{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 150px;
 
-@media(min-width:1180px) {
+    }
+    
+    .line {
+    width: 90%;
+    height:10px;
+    align-self: center;
+    margin : 20px auto 0;
+   }
+  
     .column {
         
         flex:25%;
@@ -398,17 +484,45 @@ p {
 
     }
 
-    .container {
-        width: 750px;
+    .containerSlide {
+        width: 850px;
         height: auto;
          margin:50px auto 0;
         overflow: hidden;
-        margin-left:50%;
+      
     
     }
-   
-       
-    
-    
+     .insta-icon svg {
+        width: 70px;
+        height: 70px;
+    }
+     .containerContact {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto;
+    }
 
+    .containerContact img {
+        width: 750px;
+        height: auto;
+    }
+}
+   
+ 
+@media(min-width:1180px) {
+    .insta-text {
+        display: inline;
+        justify-content: center;
+        font-size:2rem;
+    }
+}
+
+    
+/* Móvil + tablet */
+@media (max-width: 1179px) {
+    .insta-text {
+        display: none;
+        
+    }
 }
